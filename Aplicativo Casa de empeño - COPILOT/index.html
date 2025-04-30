@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi casa de empeño - Empeños y Préstamos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="login-page" class="login-container">
+        <div class="login-box">
+            <h1><i class="fas fa-landmark"></i> Mi casa de empeño</h1>
+            <p>Bienvenido, por favor inicia sesión.</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> Usuario:</label>
+                    <input type="text" id="username" name="username" required placeholder="Escribe tu usuario" autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Contraseña:</label>
+                     <input type="password" id="password" name="password" required placeholder="Escribe tu contraseña" autocomplete="current-password">
+                </div>
+                 <div class="input-group" id="branch-select-container" style="display: none;">
+                     <label for="branch"><i class="fas fa-store"></i> Sucursal:</label>
+                    <select id="branch" name="branch">
+                        <option value="">Selecciona tu sucursal</option>
+                        </select>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+                <p id="login-error" class="error-message" style="display: none;">Usuario o contraseña incorrectos.</p>
+            </form>
+        </div>
+    </div>
+
+    <div id="app-container" class="app-layout" style="display: none;">
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                 <h3><i class="fas fa-landmark"></i> Mi casa de empeño</h3>
+                <span id="user-role-display"></span>
+            </div>
+            <nav id="main-nav">
+                </nav>
+            <button id="logout-button" class="btn btn-danger btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </aside>
+
+        <main id="main-content">
+            <header class="main-header">
+                <h2 id="current-section-title">Bienvenido</h2>
+                <div id="user-info">
+                    <span id="username-display"></span>
+                    <span id="branch-display" style="margin-left: 15px;"></span>
+                </div>
+            </header>
+            <section id="content-area" class="content-area-styling">
+                <p>Selecciona una opción del menú lateral para comenzar.</p>
+            </section>
+        </main>
+    </div>
+
+    <div id="generic-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <h3 id="modal-title">Título del Modal</h3>
+            <div id="modal-body">
+                <p>Contenido del modal...</p>
+            </div>
+            <div id="modal-footer">
+                 <button class="btn btn-secondary close-modal-btn">Cerrar</button>
+                 <button id="modal-confirm-btn" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
